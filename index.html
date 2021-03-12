@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Math Quize</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding-top: 60px;
+            background-color: #ffa502;
+            overflow: hidden;
+
+        }
+
+        .gridStyle {
+            display: grid;
+            grid-area: 'nave';
+        }
+
+        .container-fluid {
+            width: 100%;
+            height: 600px;
+            padding: 0px;
+            margin: 0px;
+            justify-content: space-evenly;
+        }
+        .mainDiv {
+            height: 600px;
+        }
+
+        .ans {
+            height: 70px;
+            padding: 20px;
+            font-size: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: bold;
+            outline: none;
+            color: rgb(255, 44, 107);
+        }
+
+        .rendumNumber {
+            padding: 50px 20px 48px 20px;
+            width: 250px;
+            height: 50px;
+            background-color: rgb(85, 250, 236);
+            border-radius: 10px;
+            box-shadow: 1px 0px 15px -1px grey;
+        }
+
+        .rendumNumber h1 {
+            font-size: 50px;
+        }
+
+        .progres {
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            height: 20px;
+            background-color: lightskyblue;
+            border-radius: 20px;
+            z-index: 100;
+            box-shadow: 1px 3px 10px 2px rgb(243, 111, 111);
+        }
+
+        .progressBar {
+            width: 10%;
+            height: 20px;
+            border-radius: 20px;
+            background-color: rgb(51, 250, 1);
+            
+
+        }
+
+        .text-center {
+            font-size: 100px;
+        }
+
+        .toasts {
+            position: absolute;
+            top: 60px;
+            left: 20%;
+            right: 50%;
+            background-color: lightgreen;
+            width: 200px;
+            border-radius: 3px;
+            padding: 0px;
+            margin: 0;
+            font-size: 15px;
+            box-shadow: 3px 3px 5px gray;
+        }
+        .toast-body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .show {
+            animation: score 0.5s ease-in forwards;
+        }
+        .hide{
+            display: none;
+        }
+
+        @keyframes score {
+            0% {
+                transform: translateY(-100px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .sideMenu {
+            width: 40%;
+            background-color: yellowgreen;
+            height: 550px;
+            border-radius: 20px;
+            box-shadow: 1px 3px 19px 2px grey;
+
+        }
+
+        .navMenu {
+            height: 130px;
+            width: 100%;
+            background-color: rgb(251, 255, 10);
+            border-radius: 20px;
+            box-shadow: 1px 3px 19px 2px grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-row">
+
+        <div class="container  d-flex flex-column mainDiv p-3">
+            <div class="row my-3 prosess">
+                <div class="progres">
+                    <div class="progressBar" id="increment"></div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="container rendumNumber align-items-center d-flex justify-content-center">
+                    <h1 class="text-denger" id="shows"></h1>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="container d-flex justify-content-center">
+                    <input id="answer" type="text" class="col-4 col-md-2 ans" name="" id="answer">
+                </div>
+            </div>
+            <div class="row my-3 d-flex justify-content-center">
+                <button type="button" id="submit" class="mx-auto col-5 col-md-3 btn btn-primary btn-lg">Submit</button>
+            </div>
+            <div class="row my-5 d-flex justify-content-center">
+                <h1 class="text-denger text-center" id="timeInt"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toasts hide">
+        <div class="d-flex">
+            <div class="toast-body p-2">
+                Score + 1 Added!
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
